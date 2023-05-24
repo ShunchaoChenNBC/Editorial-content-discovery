@@ -1,3 +1,4 @@
+create or replace table `nbcu-ds-sandbox-a-001.Shunchao_Sandbox.Top_50_Contents` as
 
 with cte as (select 
 DATE_ADD(DATE_TRUNC(adobe_date, WEEK(SUNDAY)), interval -7 DAY) as Week_Ending, --Sunday as the last day of a Week
