@@ -22,7 +22,7 @@ lower(display_name) as Display_Name,
 count(distinct adobe_tracking_id) as Cumul_reached,
 from `nbcu-ds-prod-001.PeacockDataMartSilver.SILVER_VIDEO` s
 where 1=1
-and adobe_date between DATE_ADD(current_date("America/New_York")-2, INTERVAL -18*30 DAY) and current_date("America/New_York")-1
+and adobe_date between DATE_ADD(current_date("America/New_York")-1, INTERVAL -18*30 DAY) and current_date("America/New_York")-1
 and num_seconds_played_no_ads > 300
 and lower(display_name) in (select distinct Display_Name from Top_30_Contents)
 and lower(consumption_type_detail) = "vod" -- VOD top 30
@@ -37,7 +37,7 @@ lower(display_name) as Display_Name,
 count(distinct adobe_tracking_id) as Cumul_reached,
 from `nbcu-ds-prod-001.PeacockDataMartSilver.SILVER_VIDEO` s
 where 1=1
-and adobe_date between DATE_ADD(current_date("America/New_York")-1, INTERVAL -18*30 DAY) and current_date("America/New_York")-1
+and adobe_date between DATE_ADD(current_date("America/New_York")-1, INTERVAL -18*30 DAY) and current_date("America/New_York")-2
 and num_seconds_played_no_ads > 300
 and lower(display_name) in (select distinct Display_Name from Top_30_Contents)
 and lower(consumption_type_detail) = "vod"
