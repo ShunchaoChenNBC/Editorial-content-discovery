@@ -1,5 +1,5 @@
 
-with Top_50_Contents as ( ---Pull top 30 VOD display_name by daily qualified reach on 5/24 (> 5 minutes watched)
+with Top_50_Contents as ( ---Pull top 50 VOD display_name by daily qualified reach on 5/24 (> 5 minutes watched)
 select 
 current_date("America/New_York")-1 as Days,
 lower(display_name) as Display_Name,
